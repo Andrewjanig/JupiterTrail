@@ -9,9 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.samuel.jupitertrail.Enum.ScreenEnum;
-import com.example.samuel.jupitertrail.Event;
+import com.example.samuel.jupitertrail.EventInstance;
+import com.example.samuel.jupitertrail.Events.AlienAttack;
+import com.example.samuel.jupitertrail.Events.Option;
 import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.R;
+
+import java.util.Random;
 
 
 /**
@@ -33,23 +37,18 @@ public class JourneyScreen extends ContextWrapper {
 
         final TextView eventText = (TextView) a.findViewById(R.id.event_text);
 
-        Event Event = new Event(Game.Difficulty);
+        EventInstance CurrentEvent = GetEvent();
 
+        eventText.setText(CurrentEvent.Text);
 
-        eventText.setText(Event.EventText);
+        LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
 
-
-        for (int i = 0; i< Event.OptionText.length; i++)
+        for (Option o : CurrentEvent.Options)
         {
-            LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
-            Button optionButton = new Button(this);
-            optionButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            optionButton.setText(Event.GetOptionText(i));
-            buttonsLayout.addView(optionButton);
+            buttonsLayout.addView(o.button);
         }
 
         //For Debugging: Generate New Event
-        LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
         Button generateButton = new Button(this);
         generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         generateButton.setText("Generate New Event");
@@ -72,5 +71,25 @@ public class JourneyScreen extends ContextWrapper {
                 Game.ChangeScreen(ScreenEnum.Checkpoint);
             }
         });
+    }
+
+    private EventInstance GetEvent()
+    {
+        Random rand = new Random();
+        int num = rand.nextInt((1 - 1) + 1) + 1;
+
+        switch(num)
+        {
+            case 1:
+                return new AlienAttack(Game.Difficulty, Game);
+            case 2:
+
+            case 3:
+
+            case 4:
+
+            default:
+                return new AlienAttack(Game.Difficulty, Game);
+        }
     }
 }
