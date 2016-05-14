@@ -15,8 +15,8 @@ public class Ship {
 
     public HashMap<ResourceEnum, Resource> ResourceList = new HashMap();
 
-
-
+    private int fuelPerEvent = 3;
+    public int eventsBetweenCheckpoints = 5;
 
 
     public int StorageUsed = 0;
@@ -32,6 +32,12 @@ public class Ship {
     {
         ResourceList.get(resource).Amount+=1;
         StorageUsed +=1;
+    }
+
+    public void MoveShip()
+    {
+        ResourceList.get(ResourceEnum.Fuel).Amount-=fuelPerEvent;
+
     }
 
 

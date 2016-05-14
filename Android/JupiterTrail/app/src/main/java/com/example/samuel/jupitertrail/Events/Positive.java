@@ -11,26 +11,32 @@ import com.example.samuel.jupitertrail.EventInstance;
 import com.example.samuel.jupitertrail.Game;
 
 /**
- * Created by Samuel on 28/04/2016.
+ * Created by Samuel on 14/05/2016.
  */
-public class AlienAttack extends EventInstance
-{
-    public AlienAttack(DifficultyEnum diff, Context G)
+public class Positive extends EventInstance {
+
+    public Positive(DifficultyEnum diff, Context G)
     {
+        Event1(diff, G);
+    }
+
+    private void Event1(DifficultyEnum diff, Context G)
+    {
+        //Event1
 
         final Game Game = (Game)G;
         Options = new Option[2];
 
-        Text = "Sensors detect an incoming vessel!";
+        Text = "Positive Event!";
 
         Options[0] = new Option();
 
         Button generateButton = new Button(Game);
         generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        generateButton.setText("Engage aliens in dogfight");
+        generateButton.setText("Do Something");
         generateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast toast = Toast.makeText(Game, "Engaged!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(Game, "Something Done!", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -41,14 +47,15 @@ public class AlienAttack extends EventInstance
 
         Button Button2 = new Button(Game);
         Button2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        Button2.setText("Run!");
+        Button2.setText("DO Something Else!");
         Button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast toast = Toast.makeText(Game, "Escaped!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(Game, "Something Else Done!", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
         Options[1].button = Button2;
     }
+
 }

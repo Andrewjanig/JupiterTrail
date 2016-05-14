@@ -57,12 +57,38 @@
 
 
             <LinearLayout
-                android:id="@+id/buttonlayout"
+            android:id="@+id/buttonlayout"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+            <TextView android:text="Distance: -"
+                android:id="@+id/eventstogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/resourceslayout"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <TextView android:text="Fuel Cells: -"
+                    android:id="@+id/resource1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Resource 2: -"
+                    android:id="@+id/resource2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Resource 3: -"
+                    android:id="@+id/resource3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 

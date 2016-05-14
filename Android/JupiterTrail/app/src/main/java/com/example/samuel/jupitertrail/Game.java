@@ -21,7 +21,9 @@ public class Game extends Activity {
 
     public DifficultyEnum Difficulty = DifficultyEnum.Medium;
     private ScreenEnum CurrentScreen = ScreenEnum.CharacterCreation;
-    public Player Player = new Player();
+
+    public Player[] Crew;
+
     public Ship Ship = new Ship();
 
 
@@ -32,6 +34,13 @@ public class Game extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Crew = new Player[4];
+        Crew[0] = new Player();
+        Crew[1] = new Player();
+        Crew[2] = new Player();
+        Crew[3] = new Player();
+
 
         ChangeScreen(ScreenEnum.CharacterCreation);
 
@@ -65,6 +74,9 @@ public class Game extends Activity {
                 break;
             case Checkpoint:
                 new CheckpointScreen(this);
+                break;
+            case Failure:
+                finish();
                 break;
 
         }
