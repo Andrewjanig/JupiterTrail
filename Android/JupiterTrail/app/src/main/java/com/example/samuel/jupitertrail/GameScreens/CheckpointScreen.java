@@ -21,7 +21,7 @@ public class CheckpointScreen extends ContextWrapper {
     public CheckpointScreen(Context context)
     {
         super(context);
-        Activity a = (Activity) context;
+        final Activity a = (Activity) context;
 
         a.setContentView(R.layout.checkpoint_screen);
 
@@ -32,13 +32,14 @@ public class CheckpointScreen extends ContextWrapper {
                // fuelText.setText(String.valueOf(Game.Ship.ResourceList.get(ResourceEnum.Fuel).Amount));
                // UpdateStorageText();
 
-                OpenDoctorScreen();
+                OpenDoctorScreen(a);
             }
         });
     }
-    private void OpenDoctorScreen()
+    private void OpenDoctorScreen(Activity a)
     {
         // Dummy function
+
         final TextView levelText =  (TextView) a.findViewById(R.id.levelTxt);
 
         levelText.setText("Level: " + "1");
