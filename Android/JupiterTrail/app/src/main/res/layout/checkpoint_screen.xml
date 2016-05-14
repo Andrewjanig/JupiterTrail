@@ -32,27 +32,6 @@
                 android:layout_weight="2"
                 android:layout_width="match_parent">
 
-                <TextView android:text="Checkpoint!:"
-                    android:id="@+id/character_title"
-                    android:textSize="12pt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="match_parent">
-
-                <TextView android:text="Significant Story text"
-                    android:id="@+id/event_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
             </LinearLayout>
 
 
@@ -62,7 +41,68 @@
                 android:gravity="center"
                 android:layout_weight="4"
                 android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView android:text="Checkpoint!:"
+                    android:id="@+id/character_title"
+                    android:textSize="12pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.09" />
+
+                <TextView
+                    android:text="Level: 0"
+                    android:id="@+id/levelTxt"
+                    android:textSize="12pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
+
+                <Button
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor"
+                    android:id="@+id/btn_Doctor"
+                    android:layout_weight="0.09"
+                    android:background="#000000"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="150dp" />
+
+                <Button
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Keeper"
+                    android:id="@+id/btn_shopkeeper"
+                    android:layout_weight="0.09"
+                    android:background="#000000"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp" />
+
+                <Button
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sight Seeing"
+                    android:id="@+id/btn_sightSeeing"
+                    android:layout_weight="0.09"
+                    android:background="#000000"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp" />
+
+                <Button
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:text="Start Journey"
+                    android:id="@+id/btn_startJourney"
+                    android:layout_weight="0.09"
+                    android:background="#000000"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
 
