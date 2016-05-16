@@ -11,10 +11,10 @@ import android.widget.TextView;
 import com.example.samuel.jupitertrail.Enum.ResourceEnum;
 import com.example.samuel.jupitertrail.Enum.ScreenEnum;
 import com.example.samuel.jupitertrail.EventInstance;
-import com.example.samuel.jupitertrail.Events.Negative;
+import com.example.samuel.jupitertrail.Events.Positive;
 import com.example.samuel.jupitertrail.Events.Neutral;
 import com.example.samuel.jupitertrail.Events.Option;
-import com.example.samuel.jupitertrail.Events.Positive;
+import com.example.samuel.jupitertrail.Events.Negative;
 import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.R;
 
@@ -29,7 +29,7 @@ public class JourneyScreen extends ContextWrapper {
     Game Game;
     Activity a;
 
-    private int eventNumber  = 0;
+    public int eventNumber  = 0;
 
     public JourneyScreen(Context context)
     {
@@ -42,21 +42,21 @@ public class JourneyScreen extends ContextWrapper {
         NewEvent();
     }
 
-    private EventInstance GetEvent()
+    private EventInstance GetEvent(Button b)
     {
         Random rand = new Random();
         int num = rand.nextInt((3 - 1) + 1) + 1;
 
         switch(num)
         {
-            case 1: //positive
-                return new Positive(Game.Difficulty, Game);
+            case 1: //negative
+                return new Negative(Game.Difficulty, Game, this, b);
             case 2: //neutral
-                return new Neutral(Game.Difficulty, Game);
-            case 3: //negative
-                return new Negative(Game.Difficulty, Game);
+                return new Neutral(Game.Difficulty, Game, this);
+            case 3: //positive
+                return new Positive(Game.Difficulty, Game, this);
             default:
-                return new Neutral(Game.Difficulty, Game);
+                return new Neutral(Game.Difficulty, Game, this);
         }
     }
 
@@ -64,23 +64,43 @@ public class JourneyScreen extends ContextWrapper {
     {
 
         eventNumber++; //Increment the number of events that has occurred since the last checkpoint
-        Game.Ship.MoveShip();
-        if (Game.Ship.ResourceList.get(ResourceEnum.Fuel).Amount < 0)
+        Game.PlayerShip.MoveShip();
+        if (Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount < 0)
         {
             Game.ChangeScreen(ScreenEnum.Failure);
         }
 
         boolean atLeastOneAlive = false;
         if (Game.Crew[0].CheckAlive())
-            atLeastOneAlive = true;
+        {
+            if (!Game.PlayerShip.Eat(Game.Crew[0].FoodRequirement()))
+                Game.Crew[0].Alive = false;
+            else
+             atLeastOneAlive = true;
+        }
         if (Game.Crew[1].CheckAlive())
-            atLeastOneAlive = true;
+        {
+            if (!Game.PlayerShip.Eat(Game.Crew[1].FoodRequirement()))
+                Game.Crew[1].Alive = false;
+            else
+                atLeastOneAlive = true;
+        }
         if (Game.Crew[2].CheckAlive())
-            atLeastOneAlive = true;
+        {
+            if (!Game.PlayerShip.Eat(Game.Crew[2].FoodRequirement()))
+                Game.Crew[2].Alive = false;
+            else
+                atLeastOneAlive = true;
+        }
         if (Game.Crew[3].CheckAlive())
-            atLeastOneAlive = true;
+        {
+            if (!Game.PlayerShip.Eat(Game.Crew[3].FoodRequirement()))
+                Game.Crew[3].Alive = false;
+            else
+                atLeastOneAlive = true;
+        }
 
-        if (atLeastOneAlive == false)
+        if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0))
             Game.finish();
 
         a.setContentView(R.layout.journey_screen);
@@ -89,43 +109,95 @@ public class JourneyScreen extends ContextWrapper {
         final TextView resource2Text = (TextView) a.findViewById(R.id.resource2);
         final TextView resource3Text = (TextView) a.findViewById(R.id.resource3);
         final TextView eventsToGoText = (TextView) a.findViewById(R.id.eventstogo);
+        final TextView crew1 = (TextView) a.findViewById(R.id.crew1);
+        final TextView crew2 = (TextView) a.findViewById(R.id.crew2);
+        final TextView crew3 = (TextView) a.findViewById(R.id.crew3);
+        final TextView crew4 = (TextView) a.findViewById(R.id.crew4);
 
-        resource1Text.setText("Fuel: " + Game.Ship.ResourceList.get(ResourceEnum.Fuel).Amount);
-        resource2Text.setText("Resource 2: " + Game.Ship.ResourceList.get(ResourceEnum.Oxygen).Amount);
-        resource2Text.setText("Resource 3: " + Game.Ship.ResourceList.get(ResourceEnum.Rockets).Amount);
-        eventsToGoText.setText("Distance to next space station: " + (Game.Ship.eventsBetweenCheckpoints - eventNumber + 1));
+        resource1Text.setText("Fuel Cells: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount + " -" + String.valueOf(Game.PlayerShip.fuelPerEvent));
+        resource2Text.setText(" Thrusters: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount);
+        resource3Text.setText(" Rations: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount + " -" + String.valueOf(TotalRationConsumption()));
+        eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1));
+        crew1.setText("Crew 1: " + Game.Crew[0].Status());
+        crew2.setText(" Crew 2: " + Game.Crew[1].Status());
+        crew3.setText(" Crew 3: " + Game.Crew[2].Status());
+        crew4.setText(" Crew 4: " + Game.Crew[3].Status());
 
         final TextView eventText = (TextView) a.findViewById(R.id.event_text);
+        LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
 
-        EventInstance CurrentEvent = GetEvent();
+        //Generate New Event Button
+        final Button generateButton = new Button(this);
+        generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        generateButton.setText("Continue On");
+        buttonsLayout.addView(generateButton);
+
+        EventInstance CurrentEvent = GetEvent(generateButton);
 
         eventText.setText(CurrentEvent.Text);
 
-        LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
 
-        for (Option o : CurrentEvent.Options)
-        {
-            buttonsLayout.addView(o.button);
-        }
+        if (CurrentEvent.Options != null)
+            for (Option o : CurrentEvent.Options)
+            {
+                buttonsLayout.addView(o.button);
+            }
 
-        //For Debugging: Generate New Event
-        Button generateButton = new Button(this);
-        generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        generateButton.setText("Generate New Event");
-        buttonsLayout.addView(generateButton);
+
 
         generateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (eventNumber< Game.Ship.eventsBetweenCheckpoints)
+                if (eventNumber< Game.PlayerShip.eventsBetweenCheckpoints)
                 {
                     NewEvent();
                 }
                 else
                 {
+                    eventNumber = 0;
                    Game.ChangeScreen(ScreenEnum.Checkpoint);
                 }
             }
         });
 
     }
+
+    public void Update()
+    {
+        final TextView resource1Text = (TextView) a.findViewById(R.id.resource1);
+        final TextView resource2Text = (TextView) a.findViewById(R.id.resource2);
+        final TextView resource3Text = (TextView) a.findViewById(R.id.resource3);
+        final TextView eventsToGoText = (TextView) a.findViewById(R.id.eventstogo);
+        final TextView crew1 = (TextView) a.findViewById(R.id.crew1);
+        final TextView crew2 = (TextView) a.findViewById(R.id.crew2);
+        final TextView crew3 = (TextView) a.findViewById(R.id.crew3);
+        final TextView crew4 = (TextView) a.findViewById(R.id.crew4);
+
+        resource1Text.setText("Fuel Cells: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount + " -" + String.valueOf(Game.PlayerShip.fuelPerEvent));
+        resource2Text.setText(" Thrusters: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount);
+        resource3Text.setText(" Rations: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount + " -" + String.valueOf(TotalRationConsumption()));
+        eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1));
+        crew1.setText("Crew 1: " + Game.Crew[0].Status());
+        crew2.setText(" Crew 2: " + Game.Crew[1].Status());
+        crew3.setText(" Crew 3: " + Game.Crew[2].Status());
+        crew4.setText(" Crew 4: " + Game.Crew[3].Status());
+    }
+
+    private int TotalRationConsumption()
+    {
+        int i = 0;
+
+        if (Game.Crew[0].Alive)
+            i+= Game.Crew[0].FoodRequirement();
+        if (Game.Crew[1].Alive)
+            i+= Game.Crew[1].FoodRequirement();
+        if (Game.Crew[2].Alive)
+            i+= Game.Crew[2].FoodRequirement();
+        if (Game.Crew[3].Alive)
+            i+= Game.Crew[3].FoodRequirement();
+
+
+        return i;
+    }
+
+
 }

@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent">
 
-                <Button android:text="Buy Oxygen Canister"
+                <Button android:text="Buy Rations"
                     android:id="@+id/oxygen_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent">
 
-                <Button android:text="Buy Rockets"
+                <Button android:text="Buy Thrusters"
                     android:id="@+id/rockets_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>

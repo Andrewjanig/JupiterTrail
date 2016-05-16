@@ -22,10 +22,10 @@ public class Game extends Activity {
     public DifficultyEnum Difficulty = DifficultyEnum.Medium;
     private ScreenEnum CurrentScreen = ScreenEnum.CharacterCreation;
 
-    public Player[] Crew;
+    public static CrewMember[] Crew;
+    public int Credits = 0;
 
-    public Ship Ship = new Ship();
-
+    public static Ship PlayerShip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +35,13 @@ public class Game extends Activity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Crew = new Player[4];
-        Crew[0] = new Player();
-        Crew[1] = new Player();
-        Crew[2] = new Player();
-        Crew[3] = new Player();
+        PlayerShip = new Ship();
+
+        Crew = new CrewMember[4];
+        Crew[0] = new CrewMember();
+        Crew[1] = new CrewMember();
+        Crew[2] = new CrewMember();
+        Crew[3] = new CrewMember();
 
 
         ChangeScreen(ScreenEnum.CharacterCreation);

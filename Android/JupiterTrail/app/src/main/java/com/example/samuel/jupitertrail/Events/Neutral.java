@@ -8,54 +8,51 @@ import android.widget.Toast;
 
 import com.example.samuel.jupitertrail.Enum.DifficultyEnum;
 import com.example.samuel.jupitertrail.EventInstance;
+import com.example.samuel.jupitertrail.Events.NeutralEvents.MarvelAtTheStars;
+import com.example.samuel.jupitertrail.Events.NeutralEvents.NameAConstellation;
+import com.example.samuel.jupitertrail.Events.NeutralEvents.SpyARogueSatellite;
 import com.example.samuel.jupitertrail.Game;
+import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
+
+import java.util.Random;
 
 /**
  * Created by Samuel on 14/05/2016.
  */
 public class Neutral extends EventInstance {
 
-    public Neutral(DifficultyEnum diff, Context G)
+    public Neutral(DifficultyEnum diff, Context G, JourneyScreen journey)
     {
-        Event1(diff, G);
+        Random rand = new Random();
+        int num = rand.nextInt((3 - 1) + 1) + 1;
+        EventTemplate event = new EventTemplate(G, 0, journey);
+
+        switch(num)
+        {
+            case 1:
+                event = new MarvelAtTheStars(diff, G, journey);
+                break;
+            case 2:
+                event = new NameAConstellation(diff, G, journey);
+                break;
+            case 3:
+                event = new SpyARogueSatellite(diff, G, journey);
+                break;
+            default:
+                break;
+        }
+
+        Options = new Option[event.Buttons.length];
+        int i = 0;
+        for (Button o : event.Buttons)
+        {
+            Options[i] = new Option();
+            Options[i].button = o;
+            i++;
+        }
+
+        Text = event.text;
     }
 
-    private void Event1(DifficultyEnum diff, Context G)
-    {
-        //Event1
-
-        final Game Game = (Game)G;
-        Options = new Option[2];
-
-        Text = "Neutral Event!";
-
-        Options[0] = new Option();
-
-        Button generateButton = new Button(Game);
-        generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        generateButton.setText("Do Something");
-        generateButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(Game, "Something Done!", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-
-        Options[0].button = generateButton;
-
-        Options[1] = new Option();
-
-        Button Button2 = new Button(Game);
-        Button2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        Button2.setText("Do Something Else!");
-        Button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(Game, "Something Else Done!", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-
-        Options[1].button = Button2;
-    }
 
 }
