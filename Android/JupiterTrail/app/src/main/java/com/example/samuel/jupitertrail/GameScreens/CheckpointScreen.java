@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.samuel.jupitertrail.Enum.ResourceEnum;
+import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.R;
+import com.example.samuel.jupitertrail.Ship;
 
 import org.w3c.dom.Text;
 
@@ -24,14 +26,11 @@ public class CheckpointScreen extends ContextWrapper {
         final Activity a = (Activity) context;
 
         a.setContentView(R.layout.checkpoint_screen);
-
-        final Button fuelButton = (Button) a.findViewById(R.id.btn_Doctor);
-        fuelButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //Game.Ship.AddResource(ResourceEnum.Fuel);
-               // fuelText.setText(String.valueOf(Game.Ship.ResourceList.get(ResourceEnum.Fuel).Amount));
-               // UpdateStorageText();
-
+ 
+        final Button doctorButton = (Button) a.findViewById(R.id.btn_Doctor);
+        doctorButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
                 OpenDoctorScreen(a);
             }
         });
@@ -40,8 +39,8 @@ public class CheckpointScreen extends ContextWrapper {
     {
         // Dummy function
 
-        final TextView levelText =  (TextView) a.findViewById(R.id.levelTxt);
+        //final TextView levelText =  (TextView) a.findViewById(R.id.levelTxt);
 
-        levelText.setText("Level: " + "1");
+        //levelText.setText("Level: " + "1");
     }
 }
