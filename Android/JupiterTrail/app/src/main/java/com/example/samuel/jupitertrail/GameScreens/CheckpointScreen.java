@@ -26,7 +26,7 @@ public class CheckpointScreen extends ContextWrapper {
         final Activity a = (Activity) context;
 
         a.setContentView(R.layout.checkpoint_screen);
- 
+
         final Button doctorButton = (Button) a.findViewById(R.id.btn_Doctor);
         doctorButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
