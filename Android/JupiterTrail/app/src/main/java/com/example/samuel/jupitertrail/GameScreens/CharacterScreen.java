@@ -25,28 +25,98 @@ public class CharacterScreen extends ContextWrapper {
 
         a.setContentView(R.layout.character_creation_screen);
 
-        final Button optionsButton = (Button) a.findViewById(R.id.miner_button);
-        optionsButton.setOnClickListener(new View.OnClickListener() {
+        final Button proff1abutton = (Button) a.findViewById(R.id.miner_buttona);
+        proff1abutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.Player.AssignProfession(ProfessionEnum.Miner);
-                Game.ChangeScreen(ScreenEnum.Provisions);
+                Game.Crew[0].AssignProfession(ProfessionEnum.Miner);
+                //proff1abutton.setBackgroundColor(0xFF00FF00);
             }
         });
 
-        final Button scoresButton = (Button) a.findViewById(R.id.doctor_button);
-        scoresButton.setOnClickListener(new View.OnClickListener() {
+        final Button proff1bbutton = (Button) a.findViewById(R.id.doctor_buttona);
+        proff1bbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.Player.AssignProfession(ProfessionEnum.Doctor);
-                Game.ChangeScreen(ScreenEnum.Provisions);
+                Game.Crew[0].AssignProfession(ProfessionEnum.Doctor);
             }
         });
 
-        final Button quitButton = (Button) a.findViewById(R.id.astronaut_button);
-        quitButton.setOnClickListener(new View.OnClickListener() {
+        final Button proff1cbutton = (Button) a.findViewById(R.id.astronaut_buttona);
+        proff1cbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.Player.AssignProfession(ProfessionEnum.Astronaut);
-                Game.ChangeScreen(ScreenEnum.Provisions);
+                Game.Crew[0].AssignProfession(ProfessionEnum.Astronaut);
             }
         });
+
+        final Button proff2abutton = (Button) a.findViewById(R.id.miner_buttonb);
+        proff2abutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[1].AssignProfession(ProfessionEnum.Miner);
+            }
+        });
+
+        final Button proff2bbutton = (Button) a.findViewById(R.id.doctor_buttonb);
+        proff2bbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[1].AssignProfession(ProfessionEnum.Doctor);
+            }
+        });
+
+        final Button proff2cbutton = (Button) a.findViewById(R.id.astronaut_buttonb);
+        proff2cbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[1].AssignProfession(ProfessionEnum.Astronaut);
+            }
+        });
+
+        final Button proff3abutton = (Button) a.findViewById(R.id.miner_buttonc);
+        proff3abutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[2].AssignProfession(ProfessionEnum.Miner);
+            }
+        });
+
+        final Button proff3bbutton = (Button) a.findViewById(R.id.doctor_buttonc);
+        proff3bbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[2].AssignProfession(ProfessionEnum.Doctor);
+            }
+        });
+
+        final Button proff3cbutton = (Button) a.findViewById(R.id.astronaut_buttonc);
+        proff3cbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[2].AssignProfession(ProfessionEnum.Astronaut);
+            }
+        });
+
+        final Button proff4abutton = (Button) a.findViewById(R.id.miner_buttond);
+        proff4abutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[3].AssignProfession(ProfessionEnum.Miner);
+            }
+        });
+
+        final Button proff4bbutton = (Button) a.findViewById(R.id.doctor_buttond);
+        proff4bbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[3].AssignProfession(ProfessionEnum.Doctor);
+            }
+        });
+
+        final Button proff4cbutton = (Button) a.findViewById(R.id.astronaut_buttond);
+        proff4cbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Game.Crew[3].AssignProfession(ProfessionEnum.Astronaut);
+            }
+        });
+
+        final Button readyButton = (Button) a.findViewById(R.id.readyButton);
+        readyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Game.Crew[0].Profession != null && Game.Crew[1].Profession != null && Game.Crew[2].Profession != null && Game.Crew[3].Profession != null)
+                    Game.ChangeScreen(ScreenEnum.Provisions);
+            }
+        });
+
     }
 }

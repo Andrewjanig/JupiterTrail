@@ -6,5 +6,7 @@ package com.example.samuel.jupitertrail.Enum;
 public enum ResourceEnum {
     Fuel,
     Oxygen,
-    Rockets
+    Rockets,
+    Rations,
+    Thruster
 }
