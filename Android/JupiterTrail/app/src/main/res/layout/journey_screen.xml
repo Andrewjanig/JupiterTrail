@@ -165,7 +165,7 @@
             </LinearLayout>
 
 
-            <TextView android:text="Distance: -"
+            <TextView android:text="Distance: --"
                 android:id="@+id/eventstogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
