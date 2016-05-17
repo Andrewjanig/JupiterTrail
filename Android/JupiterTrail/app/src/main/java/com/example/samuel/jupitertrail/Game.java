@@ -1,9 +1,11 @@
 package com.example.samuel.jupitertrail;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 import com.example.samuel.jupitertrail.Enum.DifficultyEnum;
@@ -25,6 +27,8 @@ public class Game extends Activity {
     public static CrewMember[] Crew;
     public int Credits = 0;
 
+    public static Context context;
+
     public static Ship PlayerShip;
 
     @Override
@@ -34,6 +38,8 @@ public class Game extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        context = this;
 
         PlayerShip = new Ship();
 

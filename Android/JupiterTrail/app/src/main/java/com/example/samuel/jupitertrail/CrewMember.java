@@ -22,6 +22,13 @@ public class CrewMember {
 
     }
 
+    public void Reset()
+    {
+        //Not sure if getting to station heals stuff
+        TempImmune = false;
+        RationConsumption = 2;
+    }
+
     public void Immunise(boolean perm)
     {
         CureIllness();
@@ -109,6 +116,12 @@ public class CrewMember {
         else
             return false;
 
+    }
+
+    public void CureAll()
+    {
+        CureIllness();
+        KyraxianPetris = false;
     }
 
     public void CureIllness()

@@ -2,6 +2,7 @@ package com.example.samuel.jupitertrail;
 
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.example.samuel.jupitertrail.Enum.ResourceEnum;
 
@@ -33,10 +34,39 @@ public class Ship {
         AddResource(ResourceEnum.Thruster, 20);
     }
 
+    public void Reset()
+    {
+        fuelPerEvent = 2;
+        TurnsTillLoss = 100;
+        boolean Farm = false;
+        eventsBetweenCheckpoints = 5;
+
+    }
+
+    public void Refill()
+    {
+        do
+        {
+            AddResource(ResourceEnum.Fuel);
+        } while (ResourceList.get(ResourceEnum.Fuel).Amount<30 && StorageUsed<MaxStorage);
+        do
+        {
+            AddResource(ResourceEnum.Rations);
+        } while (ResourceList.get(ResourceEnum.Rations).Amount<30 && StorageUsed<MaxStorage);
+    }
+
     public void AddResource(ResourceEnum resource)
     {
-        ResourceList.get(resource).Amount+=1;
-        StorageUsed +=1;
+        if (StorageUsed<MaxStorage)
+        {
+            ResourceList.get(resource).Amount += 1;
+            StorageUsed += 1;
+        }
+        else
+        {
+            Toast toast = Toast.makeText(Game.context, "Storage Full! (Easier this way)", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void AddResource(ResourceEnum resource, int x)

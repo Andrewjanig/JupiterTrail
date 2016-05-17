@@ -130,6 +130,7 @@ public class JourneyScreen extends ContextWrapper {
         final Button generateButton = new Button(this);
         generateButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         generateButton.setText("Continue On");
+        generateButton.setMinHeight(0);
         buttonsLayout.addView(generateButton);
 
         EventInstance CurrentEvent = GetEvent(generateButton);
@@ -140,6 +141,7 @@ public class JourneyScreen extends ContextWrapper {
         if (CurrentEvent.Options != null)
             for (Option o : CurrentEvent.Options)
             {
+                o.button.setMinHeight(0);
                 buttonsLayout.addView(o.button);
             }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.samuel.jupitertrail.Enum.DifficultyEnum;
@@ -13,6 +14,7 @@ import com.example.samuel.jupitertrail.Events.NeutralEvents.NameAConstellation;
 import com.example.samuel.jupitertrail.Events.NeutralEvents.SpyARogueSatellite;
 import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
+import com.example.samuel.jupitertrail.R;
 
 import java.util.Random;
 
@@ -41,6 +43,10 @@ public class Neutral extends EventInstance {
             default:
                 break;
         }
+
+        Game a = (Game)G;
+        final TextView titleText = (TextView) a.findViewById(R.id.event_title);
+        titleText.setText(event.getClass().getSimpleName());
 
         Options = new Option[event.Buttons.length];
         int i = 0;

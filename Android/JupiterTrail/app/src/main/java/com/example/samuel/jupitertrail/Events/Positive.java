@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.samuel.jupitertrail.CrewMember;
@@ -12,6 +13,7 @@ import com.example.samuel.jupitertrail.Enum.ResourceEnum;
 import com.example.samuel.jupitertrail.EventInstance;
 import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
+import com.example.samuel.jupitertrail.R;
 
 import java.util.Random;
 
@@ -25,39 +27,52 @@ public class Positive extends EventInstance {
         this.journey = journey;
         Random rand = new Random();
         int num = rand.nextInt((9 - 1) + 1) + 1;
-
+        String eventName = "";
         switch(num)
         {
             case 1:
                 RemainsOfADeadStar(diff, G);
+                eventName = "Remains of a Dead Star";
                 break;
             case 2:
                 DeadSpacecraftSalvage(diff, G);
+                eventName = "Dead Spacecraft Salvage";
                 break;
             case 3:
                 RichMineralDeposit(diff, G);
+                eventName = "Rich Mineral Deposit";
                 break;
             case 4:
                 ForceOfWill(diff, G);
+                eventName = "Force of Will";
                 break;
             case 5:
                 Vaccine(diff, G);
+                eventName = "Vaccine";
                 break;
             case 6:
                 FlightOfThePhoenix(diff, G);
+                eventName = "Flight of the Pheonix";
                 break;
             case 7:
                 HybridInjectionSystem(diff, G);
+                eventName = "Hybrid Injection System";
                 break;
             case 8:
                 InfernalPreignitionChamber(diff, G);
+                eventName = "Infernal Pre-ignition Chamber";
                 break;
             case 9:
                 HydraulicFarmOperational(diff, G);
+                eventName = "Hydraulic Farm Operation";
                 break;
             default:
                 break;
         }
+
+        Game a = (Game)G;
+        final TextView titleText = (TextView) a.findViewById(R.id.event_title);
+        titleText.setText(eventName);
 
     }
 
