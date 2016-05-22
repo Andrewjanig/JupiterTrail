@@ -31,6 +31,5 @@ public class ExampleUnitTest {
         assertEquals(testCrewman.PermImmune, true);
         assertEquals(testCrewman.Alive, false);
     }
-
-    public void
+    
 }
