@@ -100,12 +100,12 @@
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\drawable\\background.xml",
-        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\drawable\\background.xml"
-    },
-    {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\drawable\\background.xml",
+        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\drawable\\background.xml"
     },
     {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
