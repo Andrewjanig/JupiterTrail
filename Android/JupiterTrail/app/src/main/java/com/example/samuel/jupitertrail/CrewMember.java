@@ -19,7 +19,10 @@ public class CrewMember {
 
     public CrewMember()
     {
-
+        if (true == false)
+        {
+            //thisdoesnothing
+        }
     }
 
     public void Reset()
