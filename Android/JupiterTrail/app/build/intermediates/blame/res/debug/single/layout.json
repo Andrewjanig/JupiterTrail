@@ -20,12 +20,12 @@
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\layout\\checkpoint_screen.xml"
     },
     {
-        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_menu_item_layout.xml"
-    },
-    {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\welcome_screen.xml",
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\layout\\welcome_screen.xml"
+    },
+    {
+        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
@@ -168,12 +168,12 @@
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\layout\\provisions_screen.xml"
     },
     {
-        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\debug\\layout\\difficulty_menu.xml",
