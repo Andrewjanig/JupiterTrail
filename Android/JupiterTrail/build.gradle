@@ -33,5 +33,5 @@ task clean(type: Delete) {
 import org.ajoberstar.gradle.git.tasks.*
 
 task commit(type: GitCommit){
-    setMessage(commitMsg)
+    setMessage("jenkins autobuild")
 }
