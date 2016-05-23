@@ -24,12 +24,12 @@
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
-        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
@@ -124,12 +124,12 @@
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
-        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\lose_screen.xml",
         "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\src\\main\\res\\layout\\lose_screen.xml"
+    },
+    {
+        "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
+        "source": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "E:\\Applications\\Jenkins\\workspace\\test2\\Android\\JupiterTrail\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
