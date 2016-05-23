@@ -100,7 +100,7 @@ public class JourneyScreen extends ContextWrapper {
                 atLeastOneAlive = true;
         }
 
-        if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0))
+        if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0) || Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount <= 0)
             Game.ChangeScreen(ScreenEnum.Failure);
 
         a.setContentView(R.layout.journey_screen);

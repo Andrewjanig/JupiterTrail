@@ -85,7 +85,7 @@ public class Game extends Activity {
                 new CheckpointScreen(this);
                 break;
             case Failure:
-                new LoseScreen((this));
+                new LoseScreen(this);
                 break;
 
         }
