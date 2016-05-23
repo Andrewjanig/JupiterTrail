@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <LinearLayout android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
+
+
+        <LinearLayout android:id="@+id/linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout0"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:layout_width="match_parent">
+
+                <TextView android:text="Choose your professions:"
+                    android:id="@+id/character_title"
+                    android:textSize="12pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutproffall"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linearLayoutproff1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1a"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent">
+
+                    <Button android:text="Miner"
+                        android:id="@+id/miner_buttona"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayout2a"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent">
+
+                    <Button android:text="Doctor"
+                        android:id="@+id/doctor_buttona"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayout4a"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent">
+
+                    <Button android:text="Astronaut"
+                        android:id="@+id/astronaut_buttona"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutproff2"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1b"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Miner"
+                            android:id="@+id/miner_buttonb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout2b"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Doctor"
+                            android:id="@+id/doctor_buttonb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout4b"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Astronaut"
+                            android:id="@+id/astronaut_buttonb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutproff3"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1c"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Miner"
+                            android:id="@+id/miner_buttonc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout2c"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Doctor"
+                            android:id="@+id/doctor_buttonc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout4c"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Astronaut"
+                            android:id="@+id/astronaut_buttonc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutproff4"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1d"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Miner"
+                            android:id="@+id/miner_buttond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout2d"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Doctor"
+                            android:id="@+id/doctor_buttond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayout4d"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent">
+
+                        <Button android:text="Astronaut"
+                            android:id="@+id/astronaut_buttond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <Button android:text="Continue"
+                    android:id="@+id/readyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
