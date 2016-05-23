@@ -64,4 +64,47 @@ public class CrewMemberUnitTests {
         assertEquals(testCrewman.Status(), expected);
 
     }
+    @Test
+    public void check_alive() throws Exception{
+        CrewMember testCrewman = new CrewMember();
+        testCrewman.Alive = false;
+
+        assertEquals(testCrewman.CheckAlive(), false);
+
+
+        testCrewman = new CrewMember();
+        testCrewman.Alive = true;
+
+        assertEquals(testCrewman.CheckAlive(), true);
+    }
+    @Test
+    public void illness_cured_phalnxus() throws Exception{
+        CrewMember testCrewman = new CrewMember();
+        testCrewman.Phalanxus = true;
+
+        testCrewman.CureIllness();
+
+        assertEquals(false, testCrewman.Phalanxus);
+
+    }
+    @Test
+    public void illness_cured_kyraxianpetris() throws Exception{
+        CrewMember testCrewman = new CrewMember();
+        testCrewman.KyraxianPetris = true;
+
+        testCrewman.CureIllness();
+
+        assertEquals(true, testCrewman.KyraxianPetris);
+
+    }
+    @Test
+    public void illness_cured_mitogamoria() throws Exception{
+        CrewMember testCrewman = new CrewMember();
+        testCrewman.Mitogamoria = true;
+
+        testCrewman.CureIllness();
+
+        assertEquals(false, testCrewman.Mitogamoria);
+
+    }
 }

@@ -24,9 +24,8 @@ public class CrewMember {
 
     public void Reset()
     {
-        //Not sure if getting to station heals stuff
-        TempImmune = false;
-        RationConsumption = 2;
+        TempImmune = false; //reset immune status
+        RationConsumption = 2; //reset food conumption
     }
 
     public void Immunise(boolean perm)

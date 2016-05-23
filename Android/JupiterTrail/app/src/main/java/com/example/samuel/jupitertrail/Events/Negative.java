@@ -1,11 +1,8 @@
 package com.example.samuel.jupitertrail.Events;
 
 import android.content.Context;
-import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.samuel.jupitertrail.Enum.DifficultyEnum;
 import com.example.samuel.jupitertrail.EventInstance;
@@ -18,9 +15,6 @@ import com.example.samuel.jupitertrail.Events.NegativeEvents.Mitogamoria;
 import com.example.samuel.jupitertrail.Events.NegativeEvents.Phalanxus;
 import com.example.samuel.jupitertrail.Events.NegativeEvents.ThrusterFailure;
 import com.example.samuel.jupitertrail.Events.NegativeEvents.UnSherajDevourer;
-import com.example.samuel.jupitertrail.Events.NeutralEvents.MarvelAtTheStars;
-import com.example.samuel.jupitertrail.Events.NeutralEvents.NameAConstellation;
-import com.example.samuel.jupitertrail.Events.NeutralEvents.SpyARogueSatellite;
 import com.example.samuel.jupitertrail.Game;
 import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
 import com.example.samuel.jupitertrail.R;
@@ -35,42 +29,8 @@ public class Negative extends EventInstance {
     public Negative(DifficultyEnum diff, Context G, JourneyScreen journey, Button b)
     {
         this.journey = journey;
-        Random rand = new Random();
-        int num = rand.nextInt((9 - 1) + 1) + 1;
-        EventTemplate event = new EventTemplate(G, 0, journey);
 
-        switch(num)
-        {
-            case 1:
-                event = new KyraxianPetris(diff, G, journey);
-                break;
-            case 2:
-                event = new Mitogamoria(diff, G, journey);
-                break;
-            case 3:
-                event = new Phalanxus(diff, G, journey);
-                break;
-            case 4:
-                event = new DockingArmMalfunction(diff, G, journey);
-                break;
-            case 5:
-                event = new ThrusterFailure(diff, G, journey);
-                break;
-            case 6:
-                event = new FuelLeak(diff, G, journey);
-                break;
-            case 7:
-                event = new CosmicWinds(diff, G, journey);
-                break;
-            case 8:
-                event = new KhalariSpacePirates(diff, G, journey, b);
-                break;
-            case 9:
-                event = new UnSherajDevourer(diff, G, journey);
-                break;
-            default:
-                break;
-        }
+        EventTemplate event = RandomEvent(diff, G, journey, b);
 
         Game a = (Game)G;
         final TextView titleText = (TextView) a.findViewById(R.id.event_title);
@@ -86,6 +46,36 @@ public class Negative extends EventInstance {
         }
 
         Text = event.text;
+    }
+
+    public EventTemplate RandomEvent (DifficultyEnum diff, Context G, JourneyScreen journey, Button b)
+    {
+        Random rand = new Random();
+        int num = rand.nextInt((9 - 1) + 1) + 1;
+
+        switch(num)
+        {
+            case 1:
+                return new KyraxianPetris(diff, G, journey);
+            case 2:
+                return new Mitogamoria(diff, G, journey);
+            case 3:
+                return new Phalanxus(diff, G, journey);
+            case 4:
+                return new DockingArmMalfunction(diff, G, journey);
+            case 5:
+                return new ThrusterFailure(diff, G, journey);
+            case 6:
+                return new FuelLeak(diff, G, journey);
+            case 7:
+                return new CosmicWinds(diff, G, journey);
+            case 8:
+                return new KhalariSpacePirates(diff, G, journey, b);
+            case 9:
+                return new UnSherajDevourer(diff, G, journey);
+            default:
+                return new EventTemplate(G, 0, journey);
+        }
     }
 
 
