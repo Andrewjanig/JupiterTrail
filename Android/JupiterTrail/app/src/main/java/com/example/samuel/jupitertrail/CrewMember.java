@@ -17,14 +17,6 @@ public class CrewMember {
     public boolean PermImmune = false;
     public boolean Alive = true;
 
-    public CrewMember()
-    {
-        if (true == false)
-        {
-            //thisdoesnothing
-        }
-    }
-
     public void Reset()
     {
         TempImmune = false; //reset immune status
