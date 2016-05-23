@@ -100,8 +100,7 @@ public class JourneyScreen extends ContextWrapper {
                 atLeastOneAlive = true;
         }
 
-        if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0) || Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount <= 0)
-            Game.ChangeScreen(ScreenEnum.Failure);
+
 
         a.setContentView(R.layout.journey_screen);
 
@@ -133,17 +132,24 @@ public class JourneyScreen extends ContextWrapper {
         generateButton.setMinHeight(0);
         buttonsLayout.addView(generateButton);
 
-        EventInstance CurrentEvent = GetEvent(generateButton);
+        if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0) || Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount <= 0)
+        {
+            Game.ChangeScreen(ScreenEnum.Failure);
+        }
+        else {
+            EventInstance CurrentEvent = GetEvent(generateButton);
 
-        eventText.setText(CurrentEvent.Text);
+            eventText.setText(CurrentEvent.Text);
+
+            if (CurrentEvent.Options != null)
+                for (Option o : CurrentEvent.Options)
+                {
+                    o.button.setMinHeight(0);
+                    buttonsLayout.addView(o.button);
+                }
+        }
 
 
-        if (CurrentEvent.Options != null)
-            for (Option o : CurrentEvent.Options)
-            {
-                o.button.setMinHeight(0);
-                buttonsLayout.addView(o.button);
-            }
 
 
 

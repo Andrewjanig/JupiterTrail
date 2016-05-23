@@ -29,5 +29,7 @@ public class LoseScreen extends ContextWrapper{
                 Game.ChangeScreen(ScreenEnum.Menu);
             }
         });
+
+
     }
 }
