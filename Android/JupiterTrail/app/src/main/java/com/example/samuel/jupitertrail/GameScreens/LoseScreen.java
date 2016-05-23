@@ -26,7 +26,7 @@ public class LoseScreen extends ContextWrapper{
         final Button menu_button = (Button) a.findViewById(R.id.menu_button);
         menu_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.finish();
+                Game.ChangeScreen(ScreenEnum.Menu);
             }
         });
     }
