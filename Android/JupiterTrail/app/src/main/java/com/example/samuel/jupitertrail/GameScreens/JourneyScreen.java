@@ -101,7 +101,7 @@ public class JourneyScreen extends ContextWrapper {
         }
 
         if (!atLeastOneAlive || (Game.PlayerShip.TurnsTillLoss <= 0))
-            Game.finish();
+            Game.ChangeScreen(ScreenEnum.Failure);
 
         a.setContentView(R.layout.journey_screen);
 
