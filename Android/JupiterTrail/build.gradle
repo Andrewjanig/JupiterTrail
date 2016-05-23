@@ -19,7 +19,6 @@ buildscript {
         // in the individual module build.gradle files
     }
 	
-	git commit-m "jenkins autobuilf"
 }
 
 allprojects {
