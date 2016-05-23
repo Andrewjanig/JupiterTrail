@@ -13,6 +13,7 @@ import com.example.samuel.jupitertrail.Enum.ScreenEnum;
 import com.example.samuel.jupitertrail.GameScreens.CharacterScreen;
 import com.example.samuel.jupitertrail.GameScreens.CheckpointScreen;
 import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
+import com.example.samuel.jupitertrail.GameScreens.LoseScreen;
 import com.example.samuel.jupitertrail.GameScreens.ProvisionsScreen;
 import com.example.samuel.jupitertrail.GameScreens.WelcomeScreen;
 
@@ -84,7 +85,7 @@ public class Game extends Activity {
                 new CheckpointScreen(this);
                 break;
             case Failure:
-                finish();
+                new LoseScreen((this));
                 break;
 
         }
