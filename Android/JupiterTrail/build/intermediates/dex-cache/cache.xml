@@ -16,6 +16,27 @@
         <dex dex="D:\Uni\DevelopmentProject1\Github\JupiterTrail\Android\JupiterTrail\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.3.0_c61c714e9c301295a49f6a7b7c8ff1c3ee67fbf9.jar" />
     </item>
     <item
+        jar="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.3.0_e71c34caf57c6abd2fd3cbd1e6a9613fce7e470e.jar" />
+    </item>
+    <item
+        jar="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_d30f68fd763f7b697f024c2d7afda14372aa4789.jar" />
+    </item>
+    <item
+        jar="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_092c9f5adab2d9fd9e4147fc93aa1d793da9fe7e.jar" />
+    </item>
+    <item
         jar="D:\Uni\DevelopmentProject1\Github\JupiterTrail\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
         jumboMode="false"
         revision="23.0.3"
@@ -28,6 +49,20 @@
         revision="23.0.3"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
         <dex dex="D:\Uni\DevelopmentProject1\Github\JupiterTrail\Android\JupiterTrail\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.3.0_bdb0910f1b3ac2773ed1a4b0147eaf8c24a283ea.jar" />
+    </item>
+    <item
+        jar="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.3.0_2c2681fdfb55a3f3b0821e0a5999b24bb6e1a498.jar" />
+    </item>
+    <item
+        jar="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="E:\Applications\Jenkins\workspace\test2\Android\JupiterTrail\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.3.0_36e60a4b751d176edf550d447586fca4c5d1fe67.jar" />
     </item>
     <item
         jar="D:\Uni\DevelopmentProject1\Github\JupiterTrail\Android\JupiterTrail\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
