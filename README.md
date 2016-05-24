@@ -1,4 +1,5 @@
 ![logo](https://raw.githubusercontent.com/Andrewjanig/JupiterTrail/master/Android/Images/logo.jpg)
+
 #Distinction Project
 
 •	Samuel Holmes – Member (9506047)
