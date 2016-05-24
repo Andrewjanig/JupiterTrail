@@ -8,6 +8,8 @@
 •	Christopher Theofilaktos – Team Leader (4953916)
 
 
-To run the latest version:
+#To run the latest version (Android):
 
-Download the latest tag and, on your android device, open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
+*Switch to the latest jenkins-build
+
+*Download and open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
