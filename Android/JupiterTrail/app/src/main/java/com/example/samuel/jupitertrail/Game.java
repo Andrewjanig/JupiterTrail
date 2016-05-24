@@ -16,6 +16,7 @@ import com.example.samuel.jupitertrail.GameScreens.JourneyScreen;
 import com.example.samuel.jupitertrail.GameScreens.LoseScreen;
 import com.example.samuel.jupitertrail.GameScreens.ProvisionsScreen;
 import com.example.samuel.jupitertrail.GameScreens.WelcomeScreen;
+import com.example.samuel.jupitertrail.GameScreens.WinScreen;
 
 /**
  * Created by Samuel on 27/04/2016.
@@ -31,6 +32,8 @@ public class Game extends Activity {
     public static Context context;
 
     public static Ship PlayerShip;
+
+    public int checkpointsTillVictory = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,9 @@ public class Game extends Activity {
                 break;
             case Failure:
                 new LoseScreen(this);
+                break;
+            case Success:
+                new WinScreen(this);
                 break;
 
         }

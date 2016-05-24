@@ -169,7 +169,7 @@ public class JourneyScreen extends ContextWrapper {
         resource2Text.setText(" Thrusters: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount);
         resource3Text.setText(" Rations: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount + " -" + String.valueOf(TotalRationConsumption()));
         resource4Text.setText(" Credits: " + Game.Credits);
-        eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1));
+        eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1) + " Checkpoints to go: " + Game.checkpointsTillVictory);
         crew1.setText("Crew 1: " + Game.Crew[0].Status());
         crew2.setText(" Crew 2: " + Game.Crew[1].Status());
         crew3.setText(" Crew 3: " + Game.Crew[2].Status());

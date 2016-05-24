@@ -65,6 +65,13 @@ public class CheckpointScreen extends ContextWrapper {
                 new ShopScreen(thisContext);
             }
         });
+
+        Game.checkpointsTillVictory -=1;
+
+        if (Game.checkpointsTillVictory == 0)
+        {
+            Game.ChangeScreen(ScreenEnum.Success);
+        }
     }
 
 }
