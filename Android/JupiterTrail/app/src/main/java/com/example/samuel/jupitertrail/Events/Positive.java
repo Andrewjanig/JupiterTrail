@@ -90,7 +90,7 @@ public class Positive extends EventInstance {
         Button1.setText("Harvest vapor");
         Button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Fuel, 10);
+                Game.PlayerShip.AddResource(ResourceEnum.Fuel, 10, true);
                 Toast toast = Toast.makeText(Game, "Received 10 Fuel Cells", Toast.LENGTH_SHORT);
                 toast.show();
                 Button1.setOnClickListener(null);
@@ -109,7 +109,7 @@ public class Positive extends EventInstance {
         Text = "“A forgotten vessel. The markings of space pirates adorn the hull, the spoils were taken long ago but some functional parts and preserved foods remain, perhaps they will serve you better";
 
         //Do Event
-        Game.PlayerShip.AddResource(ResourceEnum.Rations, 10);
+        Game.PlayerShip.AddResource(ResourceEnum.Rations, 10, true);
 
         Options[0] = new Option();
         Options[1] = new Option();
@@ -120,7 +120,7 @@ public class Positive extends EventInstance {
         Button1.setText("Take a thruster");
         Button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Thruster, 1);
+                Game.PlayerShip.AddResource(ResourceEnum.Thruster, 1, true);
                 Toast toast = Toast.makeText(Game, "Took a thruster", Toast.LENGTH_SHORT);
                 toast.show();
                 Button1.setOnClickListener(null);
@@ -133,7 +133,7 @@ public class Positive extends EventInstance {
         Button2.setText("Take a fuel cell");
         Button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Fuel, 1);
+                Game.PlayerShip.AddResource(ResourceEnum.Fuel, 1, true);
                 Toast toast = Toast.makeText(Game, "Took a fuel cell", Toast.LENGTH_SHORT);
                 toast.show();
                 Button1.setOnClickListener(null);

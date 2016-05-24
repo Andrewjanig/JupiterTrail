@@ -34,21 +34,21 @@ public class ShopScreen extends ContextWrapper {
         final Button fuelButton = (Button) a.findViewById(R.id.fuel_button);
         fuelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Fuel);
+                Game.Credits = Game.PlayerShip.AddResource(ResourceEnum.Fuel, Game.Credits);
                 UpdateStorageText();
             }
         });
-        final Button oxygenButton = (Button) a.findViewById(R.id.oxygen_button);
-        oxygenButton.setOnClickListener(new View.OnClickListener() {
+        final Button rations_button = (Button) a.findViewById(R.id.rations_button);
+        rations_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Thruster);
+                Game.Credits = Game.PlayerShip.AddResource(ResourceEnum.Rations, Game.Credits);
                 UpdateStorageText();
             }
         });
-        final Button rocketsButton = (Button) a.findViewById(R.id.rockets_button);
-        rocketsButton.setOnClickListener(new View.OnClickListener() {
+        final Button thrusters_button = (Button) a.findViewById(R.id.thrusters_button);
+        thrusters_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Game.PlayerShip.AddResource(ResourceEnum.Rations);
+                Game.Credits = Game.PlayerShip.AddResource(ResourceEnum.Thruster, Game.Credits);
                 UpdateStorageText();
             }
         });
@@ -62,14 +62,14 @@ public class ShopScreen extends ContextWrapper {
 
     private void UpdateStorageText()
     {
-        final TextView storageText = (TextView) a.findViewById(R.id.storage_text);
+        final TextView creditsText = (TextView) a.findViewById(R.id.credits_text);
         final TextView fuelText = (TextView) a.findViewById(R.id.fuel_text);
-        final TextView oxygenText = (TextView) a.findViewById(R.id.oxygen_text);
-        final TextView rocketsText = (TextView) a.findViewById(R.id.rockets_text);
+        final TextView rations_text = (TextView) a.findViewById(R.id.rations_text);
+        final TextView thrusters_text = (TextView) a.findViewById(R.id.thrusters_text);
 
-        storageText.setText("Storage Used: " + String.valueOf(Game.PlayerShip.StorageUsed) + "/" + String.valueOf(Game.PlayerShip.MaxStorage));
+        creditsText.setText("Credits: " + String.valueOf(Game.Credits));
         fuelText.setText(String.valueOf(Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount));
-        oxygenText.setText(String.valueOf(Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount));
-        rocketsText.setText(String.valueOf(Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount));
+        rations_text.setText(String.valueOf(Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount));
+        thrusters_text.setText(String.valueOf(Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount));
     }
 }

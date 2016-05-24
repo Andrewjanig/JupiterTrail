@@ -99,6 +99,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minHeight="0dp"/>
+                        <Button android:text="Resource 4: -"
+                            android:id="@+id/resource4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minHeight="0dp"/>
 
                     </LinearLayout>
 

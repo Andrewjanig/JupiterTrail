@@ -26,7 +26,7 @@ public class Game extends Activity {
     private ScreenEnum CurrentScreen = ScreenEnum.CharacterCreation;
 
     public static CrewMember[] Crew;
-    public int Credits = 0;
+    public int Credits = 100;
 
     public static Context context;
 

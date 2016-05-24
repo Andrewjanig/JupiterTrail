@@ -12,7 +12,6 @@ import java.util.*;
  * Created by Samuel on 27/04/2016.
  */
 public class Ship {
-    public int MaxStorage = 100;
 
     public HashMap<ResourceEnum, Resource> ResourceList = new HashMap();
 
@@ -21,17 +20,15 @@ public class Ship {
     public boolean Farm = false;
     public int TurnsTillLoss = 100;
 
-    public int StorageUsed = 0;
-
     public Ship()
     {
         ResourceList.put(ResourceEnum.Fuel, new Resource());
         ResourceList.put(ResourceEnum.Thruster, new Resource());
         ResourceList.put(ResourceEnum.Rations, new Resource());
 
-        AddResource(ResourceEnum.Fuel, 30);
-        AddResource(ResourceEnum.Rations, 50);
-        AddResource(ResourceEnum.Thruster, 20);
+        AddResource(ResourceEnum.Fuel, 30, true);
+        AddResource(ResourceEnum.Rations, 50, true);
+        AddResource(ResourceEnum.Thruster, 20, true);
     }
 
     public void Reset()
@@ -43,36 +40,31 @@ public class Ship {
 
     }
 
-    public void Refill()
+    public void AddResource(ResourceEnum resource, int x, boolean free)
     {
-        do
-        {
-            AddResource(ResourceEnum.Fuel);
-        } while (ResourceList.get(ResourceEnum.Fuel).Amount<30 && StorageUsed<MaxStorage);
-        do
-        {
-            AddResource(ResourceEnum.Rations);
-        } while (ResourceList.get(ResourceEnum.Rations).Amount<30 && StorageUsed<MaxStorage);
+            ResourceList.get(resource).Amount += x;
     }
 
-    public void AddResource(ResourceEnum resource)
+    public int AddResource(ResourceEnum resource, int credits)
     {
-        if (StorageUsed<MaxStorage)
+        if (credits > 0)
         {
             ResourceList.get(resource).Amount += 1;
-            StorageUsed += 1;
+            credits-=1;
+            return credits;
         }
-        else
-        {
-            Toast toast = Toast.makeText(Game.context, "Storage Full! (Easier this way)", Toast.LENGTH_SHORT);
-            toast.show();
-        }
+        return credits;
     }
 
-    public void AddResource(ResourceEnum resource, int x)
+    public int AddResource(ResourceEnum resource, int credits, int x)
     {
-        ResourceList.get(resource).Amount+=x;
-        StorageUsed +=x;
+        if (credits > x)
+        {
+            ResourceList.get(resource).Amount += x;
+            credits-=x;
+            return credits;
+        }
+        return credits;
     }
 
     public boolean Eat(int x)
@@ -92,7 +84,6 @@ public class Ship {
     {
         ResourceList.get(ResourceEnum.Fuel).Amount-=fuelPerEvent;
         TurnsTillLoss -= 1;
-        StorageUsed -=fuelPerEvent;
 
     }
 

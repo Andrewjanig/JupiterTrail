@@ -104,23 +104,7 @@ public class JourneyScreen extends ContextWrapper {
 
         a.setContentView(R.layout.journey_screen);
 
-        final TextView resource1Text = (TextView) a.findViewById(R.id.resource1);
-        final TextView resource2Text = (TextView) a.findViewById(R.id.resource2);
-        final TextView resource3Text = (TextView) a.findViewById(R.id.resource3);
-        final TextView eventsToGoText = (TextView) a.findViewById(R.id.eventstogo);
-        final TextView crew1 = (TextView) a.findViewById(R.id.crew1);
-        final TextView crew2 = (TextView) a.findViewById(R.id.crew2);
-        final TextView crew3 = (TextView) a.findViewById(R.id.crew3);
-        final TextView crew4 = (TextView) a.findViewById(R.id.crew4);
-
-        resource1Text.setText("Fuel Cells: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount + " -" + String.valueOf(Game.PlayerShip.fuelPerEvent));
-        resource2Text.setText(" Thrusters: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount);
-        resource3Text.setText(" Rations: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount + " -" + String.valueOf(TotalRationConsumption()));
-        eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1));
-        crew1.setText("Crew 1: " + Game.Crew[0].Status());
-        crew2.setText(" Crew 2: " + Game.Crew[1].Status());
-        crew3.setText(" Crew 3: " + Game.Crew[2].Status());
-        crew4.setText(" Crew 4: " + Game.Crew[3].Status());
+        Update();
 
         final TextView eventText = (TextView) a.findViewById(R.id.event_text);
         LinearLayout buttonsLayout = (LinearLayout) a.findViewById(R.id.buttonlayout);
@@ -174,6 +158,7 @@ public class JourneyScreen extends ContextWrapper {
         final TextView resource1Text = (TextView) a.findViewById(R.id.resource1);
         final TextView resource2Text = (TextView) a.findViewById(R.id.resource2);
         final TextView resource3Text = (TextView) a.findViewById(R.id.resource3);
+        final TextView resource4Text = (TextView) a.findViewById(R.id.resource4);
         final TextView eventsToGoText = (TextView) a.findViewById(R.id.eventstogo);
         final TextView crew1 = (TextView) a.findViewById(R.id.crew1);
         final TextView crew2 = (TextView) a.findViewById(R.id.crew2);
@@ -183,6 +168,7 @@ public class JourneyScreen extends ContextWrapper {
         resource1Text.setText("Fuel Cells: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Fuel).Amount + " -" + String.valueOf(Game.PlayerShip.fuelPerEvent));
         resource2Text.setText(" Thrusters: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Thruster).Amount);
         resource3Text.setText(" Rations: " + Game.PlayerShip.ResourceList.get(ResourceEnum.Rations).Amount + " -" + String.valueOf(TotalRationConsumption()));
+        resource4Text.setText(" Credits: " + Game.Credits);
         eventsToGoText.setText("Distance to next space station: " + (Game.PlayerShip.eventsBetweenCheckpoints - eventNumber + 1));
         crew1.setText("Crew 1: " + Game.Crew[0].Status());
         crew2.setText(" Crew 2: " + Game.Crew[1].Status());
