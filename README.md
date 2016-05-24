@@ -7,3 +7,7 @@
 
 •	Christopher Theofilaktos – Team Leader (4953916)
 
+
+To run the latest version:
+
+Download the latest tag and, on your android device, open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
