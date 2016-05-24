@@ -5,11 +5,11 @@
 
 •	Andrew Janig – Product Owner (7663668)
 
-•	Christopher Theofilaktos – Team Leader (4953916)
+Christopher Theofilaktos – Team Leader (4953916)
 
 
 #To run the latest version (Android):
 
-*Switch to the latest jenkins-build
+•	Switch to the latest jenkins-build
 
-*Download and open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
+•	Download and open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
