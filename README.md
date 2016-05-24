@@ -5,7 +5,7 @@
 
 •	Andrew Janig – Product Owner (7663668)
 
-Christopher Theofilaktos – Team Leader (4953916)
+• Christopher Theofilaktos – Team Leader (4953916)
 
 
 #To run the latest version (Android):
