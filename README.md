@@ -16,4 +16,4 @@
 •	Download and open \Android\JupiterTrail\app\build\outputs\apk\app-release.apk
 
 NOTE: If your device is giving you an error when trying to install the APK, uninstall the old version first!
-.
+..
