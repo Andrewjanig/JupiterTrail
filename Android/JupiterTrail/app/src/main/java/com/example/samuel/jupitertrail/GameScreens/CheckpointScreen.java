@@ -18,7 +18,7 @@ import org.w3c.dom.Text;
 
 
 /**
- * Created by Samuel on 27/04/2016.
+ * Created by Chris on 27/04/2016.
  */
 public class CheckpointScreen extends ContextWrapper {
 
