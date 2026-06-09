@@ -35,7 +35,7 @@
                 android:layout_weight="2"
                 android:layout_width="match_parent">
 
-                <TextView android:text="Jupiter Trail 0.9.4"
+                <TextView android:text="Jupiter Trail 1.0"
                     android:id="@+id/menu_title"
                     android:textSize="16pt"
                     android:layout_width="wrap_content"
